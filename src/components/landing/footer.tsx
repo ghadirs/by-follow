@@ -1,4 +1,6 @@
 import { Mail, Smartphone, Send, ShieldCheck } from "lucide-react";
+import Image from "next/image";
+import zarinPalImg from '@/assets/landing/zarin-pal.png'
 
 export default function Footer() {
   return (
@@ -105,22 +107,15 @@ export default function Footer() {
                 <div className="w-[76px] h-[86px] bg-[#F9F9F9] rounded-[15px] flex items-center justify-center overflow-hidden relative shadow-lg hover:scale-105 transition-transform cursor-pointer">
                   {/* CSS gradient simulation from provided code */}
                   <div className="w-[60px] h-[85px] flex items-center justify-center relative">
-                    <div className="absolute inset-0 bg-yellow-400 flex items-center justify-center">
-                      <span className="font-bold text-black text-xs rotate-90">
-                        ZARIN
-                      </span>
-                    </div>
+                    <Image src={zarinPalImg} alt='zarinpal' className="absolute w-full h-full bg-yellow-400 flex items-center justify-center" />
+
                   </div>
                 </div>
 
                 {/* Badge 2 */}
                 <div className="w-[76px] h-[86px] bg-[#F9F9F9] rounded-[15px] flex items-center justify-center overflow-hidden relative shadow-lg hover:scale-105 transition-transform cursor-pointer">
                   <div className="w-[60px] h-[85px] flex items-center justify-center relative">
-                    <div className="absolute inset-0 bg-yellow-400 flex items-center justify-center">
-                      <span className="font-bold text-black text-xs rotate-90">
-                        PAL
-                      </span>
-                    </div>
+                    <Image src={zarinPalImg} alt='zarinpal' className="absolute w-full h-full bg-yellow-400 flex items-center justify-center" />
                   </div>
                 </div>
               </div>
@@ -131,7 +126,7 @@ export default function Footer() {
             </div>
           </div>
           {/* Copyright Section */}
-          <div className="my-16 pt-8 border-t border-white/5 text-center">
+          <div className="mt-16 pt-8 border-t border-white/5 text-center">
             <p className="text-white/75 text-[13px] md:text-[15px] font-medium ">
               حق نشر © 2025 ByFollow. تمامی حقوق محفوظ است.
             </p>
