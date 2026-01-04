@@ -1,3 +1,5 @@
+"use client"
+
 import {
   Music,
   Twitter,
@@ -9,12 +11,80 @@ import {
   Video,
   Instagram,
   Send,
-  Image as ImageIcon,
 } from "lucide-react";
 import serviceCycle from "@/assets/landing/services-cycle.png";
 import Image from "next/image";
+import ServiceSelection from "@/components/landing/service-selection";
+import {useState} from "react";
+import {SocialMediaService} from "@/types/landing";
 
 export default function ServicesSection() {
+  const [activeService, setActiveService] = useState<SocialMediaService | null>(null)
+
+  const socialMedias = [
+    {
+      title: 'اسپاتیفای',
+      icon: <Music className="w-8 h-8 md:w-10 md:h-10 text-white" />,
+      bg: "bg-[#1DB954]",
+    }, // Spotify
+    {
+      title: 'توییتر',
+      icon: (
+          <Twitter className="w-8 h-8 md:w-10 md:h-10 text-white" />
+      ),
+      bg: "bg-[#1DA1F2]",
+    }, // Twitter
+    {
+      title: 'یوتوب',
+      icon: (
+          <Youtube className="w-8 h-8 md:w-10 md:h-10 text-white" />
+      ),
+      bg: "bg-[#FF0000]",
+    }, // YouTube
+    {
+      title: 'اسنپ چت',
+      icon: <Ghost className="w-8 h-8 md:w-10 md:h-10 text-white" />,
+      bg: "bg-[#FFFC00]",
+    }, // Snapchat (Ghost as placeholder)
+    {
+      title: 'واتس آپ',
+      icon: (
+          <MessageCircle className="w-8 h-8 md:w-10 md:h-10 text-white" />
+      ),
+      bg: "bg-[#25D366]",
+    }, // WhatsApp
+    {
+      title: 'دریبل',
+      icon: (
+          <Dribbble className="w-8 h-8 md:w-10 md:h-10 text-white" />
+      ),
+      bg: "bg-[#EA4C89]",
+    }, // Dribbble
+    {
+      title: 'دیسکورد',
+      icon: (
+          <Gamepad2 className="w-8 h-8 md:w-10 md:h-10 text-white" />
+      ),
+      bg: "bg-[#5865F2]",
+    }, // Discord
+    {
+      title: 'تیک تاک',
+      icon: <Video className="w-8 h-8 md:w-10 md:h-10 text-white" />,
+      bg: "bg-[#000000]",
+    }, // TikTok
+    {
+      title: 'اینستاگرام',
+      icon: (
+          <Instagram className="w-8 h-8 md:w-10 md:h-10 text-white" />
+      ),
+      bg: "bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888]",
+    }, // Instagram
+    {
+      title: 'تلگرام',
+      icon: <Send className="w-8 h-8 md:w-10 md:h-10 text-white" />,
+      bg: "bg-[#0088cc]",
+    }, // Telegram
+  ]
   return (
     <div
       className="min-h-screen w-full bg-[#070B28] text-white overflow-x-hidden"
@@ -28,69 +98,20 @@ export default function ServicesSection() {
           </h2>
 
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 w-full max-w-[1200px]">
-            {[
-              {
-                icon: <Music className="w-8 h-8 md:w-10 md:h-10 text-white" />,
-                bg: "bg-[#1DB954]",
-              }, // Spotify
-              {
-                icon: (
-                  <Twitter className="w-8 h-8 md:w-10 md:h-10 text-white" />
-                ),
-                bg: "bg-[#1DA1F2]",
-              }, // Twitter
-              {
-                icon: (
-                  <Youtube className="w-8 h-8 md:w-10 md:h-10 text-white" />
-                ),
-                bg: "bg-[#FF0000]",
-              }, // YouTube
-              {
-                icon: <Ghost className="w-8 h-8 md:w-10 md:h-10 text-white" />,
-                bg: "bg-[#FFFC00]",
-              }, // Snapchat (Ghost as placeholder)
-              {
-                icon: (
-                  <MessageCircle className="w-8 h-8 md:w-10 md:h-10 text-white" />
-                ),
-                bg: "bg-[#25D366]",
-              }, // WhatsApp
-              {
-                icon: (
-                  <Dribbble className="w-8 h-8 md:w-10 md:h-10 text-white" />
-                ),
-                bg: "bg-[#EA4C89]",
-              }, // Dribbble
-              {
-                icon: (
-                  <Gamepad2 className="w-8 h-8 md:w-10 md:h-10 text-white" />
-                ),
-                bg: "bg-[#5865F2]",
-              }, // Discord
-              {
-                icon: <Video className="w-8 h-8 md:w-10 md:h-10 text-white" />,
-                bg: "bg-[#000000]",
-              }, // TikTok
-              {
-                icon: (
-                  <Instagram className="w-8 h-8 md:w-10 md:h-10 text-white" />
-                ),
-                bg: "bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888]",
-              }, // Instagram
-              {
-                icon: <Send className="w-8 h-8 md:w-10 md:h-10 text-white" />,
-                bg: "bg-[#0088cc]",
-              }, // Telegram
-            ].map((item, idx) => (
+            {socialMedias.map((item, idx) => (
               <div
                 key={idx}
                 className={`w-[60px] h-[60px] md:w-[80px] md:h-[80px] rounded-[20px] md:rounded-[24px] flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 cursor-pointer ${item.bg}`}
+                onClick={() => setActiveService(item)}
               >
                 {item.icon}
               </div>
             ))}
           </div>
         </section>
+        {activeService &&
+          <ServiceSelection serviceName={activeService.title} serviceIcon={activeService.icon}/>
+        }
         <section className="relative w-full py-16 md:py-24" dir="rtl">
           <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-20">
