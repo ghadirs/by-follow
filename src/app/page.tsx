@@ -20,7 +20,7 @@ export default function LandingPage() {
       {/* Navbar Placeholder */}
       <Navbar />
 
-      <main className="container pt-0 mx-auto px-4">
+      <main className="container pt-0 mx-auto px-4 pt-24">
         <QuickServiceLinks />
         <HeroBanner />
         <ServicesSection />
