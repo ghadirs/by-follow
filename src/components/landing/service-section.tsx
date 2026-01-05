@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   Music,
@@ -15,82 +15,72 @@ import {
 import serviceCycle from "@/assets/landing/services-cycle.png";
 import Image from "next/image";
 import ServiceSelection from "@/components/landing/service-selection";
-import {useState} from "react";
-import {SocialMediaService} from "@/types/landing";
+import { useState } from "react";
+import { SocialMediaService } from "@/types/landing";
 
 export default function ServicesSection() {
-  const [activeService, setActiveService] = useState<SocialMediaService | null>(null)
+  const [activeService, setActiveService] = useState<SocialMediaService | null>(
+    null,
+  );
 
   const socialMedias = [
     {
-      title: 'اسپاتیفای',
+      title: "اسپاتیفای",
       icon: <Music className="w-8 h-8 md:w-10 md:h-10 text-white" />,
       bg: "bg-[#1DB954]",
     }, // Spotify
     {
-      title: 'توییتر',
-      icon: (
-          <Twitter className="w-8 h-8 md:w-10 md:h-10 text-white" />
-      ),
+      title: "توییتر",
+      icon: <Twitter className="w-8 h-8 md:w-10 md:h-10 text-white" />,
       bg: "bg-[#1DA1F2]",
     }, // Twitter
     {
-      title: 'یوتوب',
-      icon: (
-          <Youtube className="w-8 h-8 md:w-10 md:h-10 text-white" />
-      ),
+      title: "یوتوب",
+      icon: <Youtube className="w-8 h-8 md:w-10 md:h-10 text-white" />,
       bg: "bg-[#FF0000]",
     }, // YouTube
     {
-      title: 'اسنپ چت',
+      title: "اسنپ چت",
       icon: <Ghost className="w-8 h-8 md:w-10 md:h-10 text-white" />,
       bg: "bg-[#FFFC00]",
     }, // Snapchat (Ghost as placeholder)
     {
-      title: 'واتس آپ',
-      icon: (
-          <MessageCircle className="w-8 h-8 md:w-10 md:h-10 text-white" />
-      ),
+      title: "واتس آپ",
+      icon: <MessageCircle className="w-8 h-8 md:w-10 md:h-10 text-white" />,
       bg: "bg-[#25D366]",
     }, // WhatsApp
     {
-      title: 'دریبل',
-      icon: (
-          <Dribbble className="w-8 h-8 md:w-10 md:h-10 text-white" />
-      ),
+      title: "دریبل",
+      icon: <Dribbble className="w-8 h-8 md:w-10 md:h-10 text-white" />,
       bg: "bg-[#EA4C89]",
     }, // Dribbble
     {
-      title: 'دیسکورد',
-      icon: (
-          <Gamepad2 className="w-8 h-8 md:w-10 md:h-10 text-white" />
-      ),
+      title: "دیسکورد",
+      icon: <Gamepad2 className="w-8 h-8 md:w-10 md:h-10 text-white" />,
       bg: "bg-[#5865F2]",
     }, // Discord
     {
-      title: 'تیک تاک',
+      title: "تیک تاک",
       icon: <Video className="w-8 h-8 md:w-10 md:h-10 text-white" />,
       bg: "bg-[#000000]",
     }, // TikTok
     {
-      title: 'اینستاگرام',
-      icon: (
-          <Instagram className="w-8 h-8 md:w-10 md:h-10 text-white" />
-      ),
+      title: "اینستاگرام",
+      icon: <Instagram className="w-8 h-8 md:w-10 md:h-10 text-white" />,
       bg: "bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888]",
     }, // Instagram
     {
-      title: 'تلگرام',
+      title: "تلگرام",
       icon: <Send className="w-8 h-8 md:w-10 md:h-10 text-white" />,
       bg: "bg-[#0088cc]",
     }, // Telegram
-  ]
+  ];
   return (
     <div
       className="min-h-screen w-full bg-[#070B28] text-white overflow-x-hidden"
       dir="rtl"
     >
-      <div className="container mx-auto px-4 py-12 flex flex-col gap-20">
+      <div className="container mx-auto px-4 pt-12 flex flex-col gap-20">
         {/* Social Media Services Section */}
         <section className="flex flex-col items-center w-full">
           <h2 className="text-[20px] font-extrabold mb-10 text-center md:text-right text-white drop-shadow-md">
@@ -109,10 +99,13 @@ export default function ServicesSection() {
             ))}
           </div>
         </section>
-        {activeService &&
-          <ServiceSelection serviceName={activeService.title} serviceIcon={activeService.icon}/>
-        }
-        <section className="relative w-full py-16 md:py-24" dir="rtl">
+        {activeService && (
+          <ServiceSelection
+            serviceName={activeService.title}
+            serviceIcon={activeService.icon}
+          />
+        )}
+        <section className="relative w-full pt-16 md:pt-24" dir="rtl">
           <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-20">
               {/* Right Side: Content */}

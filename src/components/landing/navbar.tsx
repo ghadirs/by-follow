@@ -7,7 +7,7 @@ import LoginModal from "@/components/modal/login-signup";
 export default function Navbar() {
   return (
     <header className="w-full pt-[40px]" dir="rtl">
-      <div className="container mx-auto max-w-[1280px] px-6 md:px-0 flex items-center justify-between">
+      <div className="container mx-auto max-w-[1280px] px-6 md:px-0 flex items-center justify-between px-4">
         {/* Right Section: Logo & Navigation */}
         <div className="flex items-center gap-16">
           {/* Logo Placeholder */}

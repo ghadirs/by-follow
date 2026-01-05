@@ -1,12 +1,12 @@
 import { Mail, Smartphone, Send, ShieldCheck } from "lucide-react";
 import Image from "next/image";
-import zarinPalImg from '@/assets/landing/zarin-pal.png'
+import zarinPalImg from "@/assets/landing/zarin-pal.png";
 
 export default function Footer() {
   return (
     <>
       <footer
-        className="relative w-full mt-20 pt-16 pb-8 bg-gradient-to-t from-black/80 to-transparent"
+        className="relative w-full mt-16 pt-16 pb-8 bg-gradient-to-t from-black/80 to-transparent"
         dir="rtl"
       >
         {/* Top Border/Glow */}
@@ -107,15 +107,22 @@ export default function Footer() {
                 <div className="w-[76px] h-[86px] bg-[#F9F9F9] rounded-[15px] flex items-center justify-center overflow-hidden relative shadow-lg hover:scale-105 transition-transform cursor-pointer">
                   {/* CSS gradient simulation from provided code */}
                   <div className="w-[60px] h-[85px] flex items-center justify-center relative">
-                    <Image src={zarinPalImg} alt='zarinpal' className="absolute w-full h-full bg-yellow-400 flex items-center justify-center" />
-
+                    <Image
+                      src={zarinPalImg}
+                      alt="zarinpal"
+                      className="absolute w-full h-full bg-yellow-400 flex items-center justify-center"
+                    />
                   </div>
                 </div>
 
                 {/* Badge 2 */}
                 <div className="w-[76px] h-[86px] bg-[#F9F9F9] rounded-[15px] flex items-center justify-center overflow-hidden relative shadow-lg hover:scale-105 transition-transform cursor-pointer">
                   <div className="w-[60px] h-[85px] flex items-center justify-center relative">
-                    <Image src={zarinPalImg} alt='zarinpal' className="absolute w-full h-full bg-yellow-400 flex items-center justify-center" />
+                    <Image
+                      src={zarinPalImg}
+                      alt="zarinpal"
+                      className="absolute w-full h-full bg-yellow-400 flex items-center justify-center"
+                    />
                   </div>
                 </div>
               </div>
