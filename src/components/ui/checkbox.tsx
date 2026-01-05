@@ -2,7 +2,7 @@ import React from "react";
 import {Check} from 'lucide-react'
 import {cn} from "@/lib/utils";
 
-const Checkbox = React.forwardRef<HTMLButtonElement, React.ButtonHTMLAttributes<HTMLButtonElement> & { checked?: boolean; onCheckedChange?: (checked: boolean) => void }>(
+const Checkbox = React.forwardRef<HTMLButtonElement, React.ButtonHTMLAttributes<HTMLButtonElement> & { id?: string ; checked?: boolean; onCheckedChange?: (checked: boolean) => void }>(
     ({ className, checked, onCheckedChange, ...props }, ref) => (
         <button
             type="button"

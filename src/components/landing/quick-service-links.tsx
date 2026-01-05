@@ -30,11 +30,11 @@ export default function QuickServiceLinks() {
           icon: <ShoppingCart className="h-5 w-5 text-white" />,
         },
       ].map((item, index) => (
-        <div key={`quick-service-link-${index}`} className="box-border flex flex-row items-center justify-between px-4 w-[193px] h-[52px] bg-[#222852]/50 rounded-[13px] transition-transform hover:scale-105 hover:bg-[#222852] cursor-pointer">
-          <span className="text-[12px] leading-[18px] text-white text-right">
+        <div key={`quick-service-link-${index}`} className="box-border flex flex-row items-center justify-start px-4 w-[193px] h-[52px] bg-[#222852]/50 rounded-[13px] transition-transform hover:scale-105 hover:bg-[#222852] cursor-pointer">
+          {item.icon}
+          <span className="text-[12px] leading-[18px] text-white text-right mx-auto">
             {item.title}
           </span>
-          {item.icon}
         </div>
       ))}
     </div>

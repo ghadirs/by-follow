@@ -1,6 +1,8 @@
 import { Mail, Smartphone, Send, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import zarinPalImg from "@/assets/landing/zarin-pal.png";
+import instagramIcon from '@/assets/icons/instagram-white.png'
+import telegramIcon from '@/assets/icons/telegram-white.png'
 
 export default function Footer() {
   return (
@@ -16,19 +18,33 @@ export default function Footer() {
           <div className="flex flex-col lg:flex-row justify-between items-start gap-12 lg:gap-8">
             {/* Column 1: Brand & Contact Info */}
             <div className="flex flex-col gap-6 max-w-sm">
-              <h3 className="text-white font-extrabold text-lg">
+              <h3 className="text-white font-extrabold text-lg text-center">
                 پنل اختصاصی بایفالو
               </h3>
-              <p className="text-white/80 text-sm leading-8 font-medium">
-                ارائه‌دهنده‌ی جامع‌ترین و باکیفیت‌ترین خدمات؛ همراه با پشتیبانی
+              <div>
+
+              <p className="text-white/80 text-sm leading-8 font-medium text-justify">
+                ارائه‌دهنده‌ی جامع‌ترین و باکیفیت‌ترین خدمات؛
+              </p>
+              <p className="text-white/80 text-sm leading-8 font-medium text-justify">
+                همراه با پشتیبانی
                 حرفه‌ای و تضمین رضایت کاربران.
               </p>
+              </div>
 
-              <div className="flex flex-col gap-4 mt-2">
+              <div className="flex justify-between items-start mt-2">
+                <div className='flex flex-col w-full items-center my-auto'>
+
                 <span className="text-white font-bold text-xs mb-1">
                   با ما همراه باشید.
                 </span>
+                  <div className='flex items-center justify-center w-full gap-4 mt-4'>
+                    <Image className='w-[13px] h-[13px]' src={instagramIcon}  alt="instagram" />
+                    <Image className='w-[13px] h-[13px]' src={telegramIcon}  alt="telegram" />
+                  </div>
+                </div>
 
+                <div className='flex flex-col gap-4 mr-8'>
                 {/* Email Box */}
                 <div className="flex items-center justify-between bg-[#3229AC]/40 border border-[#3229AC]/20 rounded-lg px-4 py-3 transition-colors hover:bg-[#3229AC]/60 group cursor-pointer">
                   <div className="flex flex-col items-start gap-1">
@@ -55,6 +71,7 @@ export default function Footer() {
                   <Send className="text-white w-4 h-4 opacity-80 group-hover:opacity-100 rotate-180" />
                 </div>
               </div>
+            </div>
             </div>
 
             {/* Middle Columns Wrapper */}

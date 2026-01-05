@@ -34,8 +34,8 @@ export default function Navbar() {
           </nav>
         </div>
 
-        <button className="flex items-center justify-center w-[193px] h-[52px] bg-[linear-gradient(180deg,rgba(55,67,152,0.5)_27.78%,rgba(115,124,187,0.5)_100%)] rounded-[13.39px] text-white font-bold text-[15px] leading-[18px] backdrop-blur-sm border border-white/5 shadow-[0px_4px_24px_-1px_rgba(0,0,0,0.2)] hover:scale-105 transition-transform active:scale-95">
-          <SignupModal /> / <LoginModal />
+        <button className="flex items-center justify-center gap-2 w-[193px] h-[52px] bg-[linear-gradient(180deg,rgba(55,67,152,0.5)_27.78%,rgba(115,124,187,0.5)_100%)] rounded-[13.39px] text-white font-bold text-[15px] leading-[18px] backdrop-blur-sm border border-white/5 shadow-[0px_4px_24px_-1px_rgba(0,0,0,0.2)] hover:scale-105 transition-transform active:scale-95">
+          <span className='cursor-pointer'><SignupModal /></span> / <span className='cursor-pointer'><LoginModal /></span>
         </button>
       </div>
     </header>

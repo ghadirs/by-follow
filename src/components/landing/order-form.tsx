@@ -5,7 +5,6 @@ import {cn} from "@/lib/utils";
 import Checkbox from "@/components/ui/checkbox";
 import React from "react";
 import {useForm} from "react-hook-form";
-import {z} from "zod";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {formSchema, FormValues} from "@/types/zod-schema";
 
@@ -42,7 +41,7 @@ export default function OrderForm() {
     };
 
     return (
-        <div className="flex justify-center items-center min-h-screen bg-[#020412] p-4" dir="rtl">
+        <div className="flex justify-center items-center min-h-screen " dir="rtl">
             {/* Main Container Rectangle 28 */}
             <div className="w-full max-w-[1065px] bg-[#070B28] rounded-[11px] border border-[#D9D9D9]/30 p-6 md:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 relative">
 
@@ -225,8 +224,8 @@ export default function OrderForm() {
                         <div className="flex items-center gap-2 pt-2">
                             {/*<Checkbox*/}
                             {/*    id="terms"*/}
-                            {/*    checked={watch("terms")}*/}
-                            {/*    onCheckedChange={(checked) => setValue("terms", checked as boolean)}*/}
+                            {/*    checked={watch("terms") as boolean}*/}
+                            {/*    onCheckedChange={(checked: boolean) => setValue("terms", checked as boolean)}*/}
                             {/*/>*/}
                             <label
                                 htmlFor="terms"

@@ -1,22 +1,22 @@
 "use client";
 
-import {
-  Music,
-  Twitter,
-  Youtube,
-  Ghost,
-  MessageCircle,
-  Dribbble,
-  Gamepad2,
-  Video,
-  Instagram,
-  Send,
-} from "lucide-react";
-import serviceCycle from "@/assets/landing/services-cycle.png";
-import Image from "next/image";
+import {useState} from "react";
 import ServiceSelection from "@/components/landing/service-selection";
-import { useState } from "react";
-import { SocialMediaService } from "@/types/landing";
+import {SocialMediaService} from "@/types/landing";
+import Image from "next/image";
+import twitter from '@/assets/icons/twitter.svg'
+import telegram from '@/assets/icons/telegram.svg'
+import spotify from '@/assets/icons/spotify.svg'
+import youtube from '@/assets/icons/youtube.svg'
+import snapchat from '@/assets/icons/snapchat.svg'
+import whatsapp from '@/assets/icons/whatsapp.svg'
+import tiktok from '@/assets/icons/tiktok.svg'
+import instagram from '@/assets/icons/instagram.svg'
+import dribble from '@/assets/icons/dribble.svg'
+import discord from '@/assets/icons/discord.svg'
+import serviceCycle from '@/assets/landing/service-cycle.png'
+import {ChevronDown} from "lucide-react";
+
 
 export default function ServicesSection() {
   const [activeService, setActiveService] = useState<SocialMediaService | null>(
@@ -26,52 +26,72 @@ export default function ServicesSection() {
   const socialMedias = [
     {
       title: "اسپاتیفای",
-      icon: <Music className="w-8 h-8 md:w-10 md:h-10 text-white" />,
+      icon:
+        <Image src={spotify} alt='spotify' className="w-full h-full md:w-full md:h-full text-white" />
+      ,
       bg: "bg-[#1DB954]",
     }, // Spotify
     {
       title: "توییتر",
-      icon: <Twitter className="w-8 h-8 md:w-10 md:h-10 text-white" />,
+      icon:
+        <Image src={twitter} alt='twitter' className="w-full h-full md:w-full md:h-full text-white" />
+      ,
       bg: "bg-[#1DA1F2]",
     }, // Twitter
     {
       title: "یوتوب",
-      icon: <Youtube className="w-8 h-8 md:w-10 md:h-10 text-white" />,
+      icon:
+        <Image src={youtube} alt='youtube' className="w-full h-full md:w-full md:h-full text-white" />
+      ,
       bg: "bg-[#FF0000]",
     }, // YouTube
     {
       title: "اسنپ چت",
-      icon: <Ghost className="w-8 h-8 md:w-10 md:h-10 text-white" />,
+      icon:
+        <Image src={snapchat} alt='snapchat' className="w-full h-full md:w-full md:h-full text-white" />
+      ,
       bg: "bg-[#FFFC00]",
     }, // Snapchat (Ghost as placeholder)
     {
       title: "واتس آپ",
-      icon: <MessageCircle className="w-8 h-8 md:w-10 md:h-10 text-white" />,
+      icon:
+        <Image src={whatsapp} alt='whatsapp' className="w-full h-full md:w-full md:h-full text-white" />
+      ,
       bg: "bg-[#25D366]",
     }, // WhatsApp
     {
       title: "دریبل",
-      icon: <Dribbble className="w-8 h-8 md:w-10 md:h-10 text-white" />,
+      icon:
+        <Image src={dribble} alt='dribble' className="w-full h-full md:w-full md:h-full text-white" />
+      ,
       bg: "bg-[#EA4C89]",
     }, // Dribbble
     {
       title: "دیسکورد",
-      icon: <Gamepad2 className="w-8 h-8 md:w-10 md:h-10 text-white" />,
+      icon:
+        <Image src={discord} alt='discord' className="w-full h-full md:w-full md:h-full text-white" />
+      ,
       bg: "bg-[#5865F2]",
     }, // Discord
     {
       title: "تیک تاک",
-      icon: <Video className="w-8 h-8 md:w-10 md:h-10 text-white" />,
+      icon:
+        <Image src={tiktok} alt='tiktok' className="w-full h-full md:w-full md:h-full text-white" />
+      ,
       bg: "bg-[#000000]",
     }, // TikTok
     {
       title: "اینستاگرام",
-      icon: <Instagram className="w-8 h-8 md:w-10 md:h-10 text-white" />,
+      icon:
+        <Image src={instagram} alt='instagram' className="w-full h-full md:w-full md:h-full text-white" />
+      ,
       bg: "bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888]",
     }, // Instagram
     {
       title: "تلگرام",
-      icon: <Send className="w-8 h-8 md:w-10 md:h-10 text-white" />,
+      icon:
+        <Image src={telegram} alt='telegram' className="w-full h-full md:w-full md:h-full text-white" />
+      ,
       bg: "bg-[#0088cc]",
     }, // Telegram
   ];
@@ -87,14 +107,19 @@ export default function ServicesSection() {
             خدمات شبکه های اجتماعی
           </h2>
 
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6 w-full max-w-[1200px]">
+          <div className="flex flex-wrap flex-row-reverse justify-center gap-4 md:gap-6 w-full max-w-[1200px]">
             {socialMedias.map((item, idx) => (
               <div
                 key={idx}
-                className={`w-[60px] h-[60px] md:w-[80px] md:h-[80px] rounded-[20px] md:rounded-[24px] flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 cursor-pointer ${item.bg}`}
+                className={`relative w-[60px] h-[60px] md:w-[80px] md:h-[80px] rounded-[20px] md:rounded-[24px] cursor-pointer`}
                 onClick={() => setActiveService(item)}
               >
                 {item.icon}
+                {activeService?.title == item.title &&
+                    <><ChevronDown className='mx-auto '/>
+                  <span className='font-semibold mx-auto w-full text-nowrap' >{`خدمات ${item.title}`}</span>
+                    </>
+                }
               </div>
             ))}
           </div>
