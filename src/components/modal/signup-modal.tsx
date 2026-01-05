@@ -6,8 +6,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import signupImg from "@/assets/landing/signup.png";
 import Image from "next/image";
-import Input from "@/components/ui/input";
-import Button from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 // --- Zod Schema Validation ---
@@ -66,7 +66,7 @@ export default function SignupModal() {
           className="flex w-full flex-col gap-6"
         >
           {/* Mobile Number Field */}
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2" dir='rtl'>
             <label className="flex items-center justify-end gap-1 text-[14px] font-bold text-white">
               شماره همراه <span className="text-[#FA2755]">*</span>
             </label>
@@ -84,7 +84,7 @@ export default function SignupModal() {
           </div>
 
           {/* Password Field */}
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2" dir='rtl'>
             <label className="flex items-center justify-end gap-1 text-[14px] font-bold text-white">
               رمز عبور <span className="text-[#FA2755]">*</span>
             </label>
@@ -102,7 +102,7 @@ export default function SignupModal() {
           </div>
 
           {/* Confirm Password Field */}
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2" dir='rtl'>
             <label className="flex items-center justify-end gap-1 text-[14px] font-bold text-white">
               تکرار رمز عبور <span className="text-[#FA2755]">*</span>
             </label>

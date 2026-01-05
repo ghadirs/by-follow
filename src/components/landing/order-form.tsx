@@ -1,6 +1,6 @@
-import Button from "@/components/ui/button";
+import {Button} from "@/components/ui/button";
 import {ChevronDown} from 'lucide-react'
-import Input from "@/components/ui/input";
+import { Input } from "@/components/ui/input";
 import {cn} from "@/lib/utils";
 import Checkbox from "@/components/ui/checkbox";
 import React from "react";

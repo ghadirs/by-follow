@@ -18,4 +18,4 @@ import React from "react";
 );
 Input.displayName = "Input";
 
-export default Input;
+export {Input};

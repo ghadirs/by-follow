@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import byFollowLogo from "@/assets/by-follow.png";
 import SignupModal from "@/components/modal/signup-modal";
-import LoginModal from "@/components/modal/login-signup";
+import LoginModal from "@/components/modal/login-modal";
 
 export default function Navbar() {
   return (
