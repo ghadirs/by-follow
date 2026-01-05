@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
     return (
         // CRITICAL: dir="rtl" sets the direction for the whole app
-        <html lang="fa" dir="rtl" className="dark">
+        <html lang="fa" dir="rtl" className="dark" style={{colorScheme:"dark"}}>
         <body className={`${vazir.className} bg-background text-foreground antialiased`}>
         <Providers>
             {children}

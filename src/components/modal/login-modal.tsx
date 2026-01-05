@@ -8,7 +8,7 @@ import loginImg from "@/assets/landing/login.png";
 import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import {Dialog, DialogContent, DialogTitle, DialogTrigger} from "@/components/ui/dialog";
 
 // --- Zod Schema Validation ---
 const loginSchema = z.object({
@@ -44,6 +44,7 @@ export default function LoginModal() {
         <span onClick={() => setIsOpen(true)}>ورود</span>
       </DialogTrigger>
       <DialogContent showCloseButton={false}>
+        <DialogTitle title="ورود به بایفالو" />
         <div className="absolute -left-4 -top-10 flex h-[96px] w-[192px] items-center justify-center">
           {/* Simulating the 3D button effect with CSS */}
           <div className="relative flex h-14 w-32 items-center justify-center rounded-2xl bg-gradient-to-b from-[#ff8fa3] to-[#ff4d6d] shadow-[0_6px_0_#c9184a] transform -rotate-6">

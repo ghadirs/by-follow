@@ -24,6 +24,7 @@ module.exports = {
             fontFamily: {
                 sans: ["var(--font-vazir)", "sans-serif"],
             },
+            dir:'rtl',
         },
     },
     plugins: [animate],
