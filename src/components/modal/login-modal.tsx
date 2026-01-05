@@ -62,7 +62,7 @@ export default function LoginModal() {
         >
           {/* Mobile Number Field */}
           <div className="flex flex-col gap-2" dir='rtl'>
-            <label className="flex items-center justify-end gap-1 text-[14px] font-bold text-white">
+            <label className="flex items-center justify-start gap-1 text-[14px] font-bold text-white">
               شماره همراه <span className="text-[#FA2755]">*</span>
             </label>
             <Input
@@ -80,7 +80,7 @@ export default function LoginModal() {
 
           {/* Password Field */}
           <div className="flex flex-col gap-2" dir='rtl'>
-            <label className="flex items-center justify-end gap-1 text-[14px] font-bold text-white">
+            <label className="flex items-center justify-start gap-1 text-[14px] font-bold text-white">
               رمز عبور <span className="text-[#FA2755]">*</span>
             </label>
             <Input
