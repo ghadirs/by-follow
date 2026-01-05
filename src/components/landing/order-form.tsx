@@ -7,24 +7,26 @@ import React from "react";
 import {useForm} from "react-hook-form";
 import {z} from "zod";
 import {zodResolver} from "@hookform/resolvers/zod";
-import {formSchema} from "@/types/zod-schema";
+import {formSchema, FormValues} from "@/types/zod-schema";
 
-type FormValues = z.infer<typeof formSchema>;
 
 const PRICE_PER_1000 = 82000;
 
 export default function OrderForm() {
+
     const form = useForm<FormValues>({
         resolver: zodResolver(formSchema),
         defaultValues: {
             serviceCategory: "telegram-channel-group",
-            serviceType: "telegram-cheap-mix",
-            quantity: 100, // Default min
+            serviceType: "cheap-mix",
+            quantity: 100, // Now TypeScript knows this is a number
             terms: false,
+            fullName: "",
+            link: "",
+            mobile: "",
+            email: "",
         },
-        mode: "onChange",
     });
-
     const { watch, register, handleSubmit, setValue, formState: { errors } } = form;
     const quantity = watch("quantity");
 
@@ -221,11 +223,11 @@ export default function OrderForm() {
 
                         {/* Terms Checkbox */}
                         <div className="flex items-center gap-2 pt-2">
-                            <Checkbox
-                                id="terms"
-                                checked={watch("terms")}
-                                onCheckedChange={(checked) => setValue("terms", checked as boolean)}
-                            />
+                            {/*<Checkbox*/}
+                            {/*    id="terms"*/}
+                            {/*    checked={watch("terms")}*/}
+                            {/*    onCheckedChange={(checked) => setValue("terms", checked as boolean)}*/}
+                            {/*/>*/}
                             <label
                                 htmlFor="terms"
                                 className="text-sm font-bold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-white cursor-pointer select-none"

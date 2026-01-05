@@ -19,7 +19,7 @@ export default function ServiceSelection({serviceName, serviceIcon}: Props) {
                     {title:`رای پست ${serviceName}`, icon:<CheckCircle2 className="w-4 h-4 text-white" />},
                     {title:`استارز پست ${serviceName}`, icon:<Star className="w-4 h-4 text-white fill-current" />},
                 ].map((item, index) =>
-                    <button className="relative group w-full sm:w-[222px] h-[65px] bg-[#222852] border border-[#2C3D94] rounded-[16px] flex items-center justify-between px-4 cursor-pointer hover:bg-[#2C3D94] transition-all shadow-[inset_0px_4px_4px_rgba(0,0,0,0.25)] overflow-hidden">
+                    <button key={`service-selection-${index}`} className="relative group w-full sm:w-[222px] h-[65px] bg-[#222852] border border-[#2C3D94] rounded-[16px] flex items-center justify-between px-4 cursor-pointer hover:bg-[#2C3D94] transition-all shadow-[inset_0px_4px_4px_rgba(0,0,0,0.25)] overflow-hidden">
                         <span className="text-white font-['Poppins'] font-bold text-[14px] sm:text-[15px] z-10">{item.title}</span>
                         <div className="absolute left-[-10px] top-1/2 -translate-y-1/2 w-16 h-16 pointer-events-none">
                             {serviceIcon}
